@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"io"
 	"log"
 )
 
@@ -95,7 +96,7 @@ func (t *binary_tree) Max() int {
 	}
 }
 
-func (t *binary_tree) Print() {
+func (t *binary_tree) Print(w io.Writer) {
 	json, err := json.Marshal(t)
 	if err != nil {
 		log.Println(err)
@@ -103,6 +104,9 @@ func (t *binary_tree) Print() {
 	}
 
 	log.Println(string(json))
+}
+
+func (t *binary_tree) PrintFile(path string) {
 }
 
 func (t *binary_tree) Asc(f func(int)) {

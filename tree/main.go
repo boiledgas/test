@@ -1,5 +1,11 @@
 package main
 
+import "io"
+
+type Node interface {
+	GetId() int
+}
+
 type Tree interface {
 	Insert(int)
 	Delete(int)
@@ -9,7 +15,8 @@ type Tree interface {
 	Max() int
 	Asc(func(int))
 	Desc(func(int))
-	Print()
+	Print(io.Writer)
+	PrintFile(string)
 }
 
 func main() {
