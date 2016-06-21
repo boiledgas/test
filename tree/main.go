@@ -1,4 +1,4 @@
-package main
+package tree
 
 import "io"
 
@@ -17,8 +17,4 @@ type Tree interface {
 	Desc(func(int))
 	Print(io.Writer)
 	PrintFile(string)
-}
-
-func main() {
-
 }
