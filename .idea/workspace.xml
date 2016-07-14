@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="182574d6-7be0-47f6-ba1e-635e7f92c7c9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/main.go" afterPath="$PROJECT_DIR$/main/main.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tree/avl_tree.go" afterPath="$PROJECT_DIR$/tree/avl_tree.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tree/binary_tree.go" afterPath="$PROJECT_DIR$/tree/binary_tree.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tree/main.go" afterPath="$PROJECT_DIR$/tree/main.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tree/tree_test.go" afterPath="$PROJECT_DIR$/tree/tree_test.go" />
     </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +21,41 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/test$Tests.coverage" NAME="Tests Coverage Results" MODIFIED="1466516092550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_n21n11_in_tree_test_go.coverage" NAME="TestAvl_Insert_n21n11 in tree_test.go Coverage Results" MODIFIED="1468250290597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_n2n1_in_tree_test_go.coverage" NAME="TestAvl_Insert_n2n1 in tree_test.go Coverage Results" MODIFIED="1468316993122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight_21_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight_21 in tree_test.go Coverage Results" MODIFIED="1468252058971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_21nil_in_tree_test_go.coverage" NAME="TestAvl_Insert_21nil in tree_test.go Coverage Results" MODIFIED="1468317761318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$gobench_tree_test_go.coverage" NAME="gobench tree_test.go Coverage Results" MODIFIED="1468317849380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_2n1n1_in_tree_test_go.coverage" NAME="TestAvl_Insert_2n1n1 in tree_test.go Coverage Results" MODIFIED="1468255239265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_OnlyLeftLeft_in_tree_test_go.coverage" NAME="TestAvl_Insert_OnlyLeftLeft in tree_test.go Coverage Results" MODIFIED="1468406717923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Delete_2n11_in_tree_test_go.coverage" NAME="TestAvl_Delete_2n11 in tree_test.go Coverage Results" MODIFIED="1468419210898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_n21nil_in_tree_test_go.coverage" NAME="TestAvl_Insert_n21nil in tree_test.go Coverage Results" MODIFIED="1468316511750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_RightLeft22_in_tree_test_go.coverage" NAME="TestAvl_Insert_RightLeft22 in tree_test.go Coverage Results" MODIFIED="1468255823975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_Random_in_tree_test_go.coverage" NAME="TestAvl_Insert_Random in tree_test.go Coverage Results" MODIFIED="1468404060401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_RightLeft11_in_tree_test_go.coverage" NAME="TestAvl_Insert_RightLeft11 in tree_test.go Coverage Results" MODIFIED="1468254161442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$Tests.coverage" NAME="Tests Coverage Results" MODIFIED="1468418550707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight12_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight12 in tree_test.go Coverage Results" MODIFIED="1468244378483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_RightLeft12_in_tree_test_go.coverage" NAME="TestAvl_Insert_RightLeft12 in tree_test.go Coverage Results" MODIFIED="1468255362498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestInsert.coverage" NAME="TestInsert Coverage Results" MODIFIED="1466606619870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight11_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight11 in tree_test.go Coverage Results" MODIFIED="1468245250087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Delete_n21nil_in_tree_test_go.coverage" NAME="TestAvl_Delete_n21nil in tree_test.go Coverage Results" MODIFIED="1468417203457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight1_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight1 in tree_test.go Coverage Results" MODIFIED="1468244406359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight22_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight22 in tree_test.go Coverage Results" MODIFIED="1468253915578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_21_in_tree_test_go.coverage" NAME="TestAvl_Insert_21 in tree_test.go Coverage Results" MODIFIED="1468317779186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_Exist_in_tree_test_go.coverage" NAME="TestAvl_Insert_Exist in tree_test.go Coverage Results" MODIFIED="1468406546908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_2n11_in_tree_test_go.coverage" NAME="TestAvl_Insert_2n11 in tree_test.go Coverage Results" MODIFIED="1468255570175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight_n2n1_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight_n2n1 in tree_test.go Coverage Results" MODIFIED="1468245325377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_RightLeft1_in_tree_test_go.coverage" NAME="TestAvl_Insert_RightLeft1 in tree_test.go Coverage Results" MODIFIED="1468254001039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_n2n1nil_in_tree_test_go.coverage" NAME="TestAvl_Insert_n2n1nil in tree_test.go Coverage Results" MODIFIED="1468316948388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Delete_Root_in_tree_test_go.coverage" NAME="TestAvl_Delete_Root in tree_test.go Coverage Results" MODIFIED="1468418440707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_n211_in_tree_test_go.coverage" NAME="TestAvl_Insert_n211 in tree_test.go Coverage Results" MODIFIED="1468332605754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_LeftRight_n21_in_tree_test_go.coverage" NAME="TestAvl_Insert_LeftRight_n21 in tree_test.go Coverage Results" MODIFIED="1468244883997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_2n1nil_in_tree_test_go.coverage" NAME="TestAvl_Insert_2n1nil in tree_test.go Coverage Results" MODIFIED="1468254049322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Insert_Bug1_in_tree_test_go.coverage" NAME="TestAvl_Insert_Bug1 in tree_test.go Coverage Results" MODIFIED="1468332555681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/test$TestAvl_Delete_n211_in_tree_test_go.coverage" NAME="TestAvl_Delete_n211 in tree_test.go Coverage Results" MODIFIED="1468418751368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -26,7 +65,100 @@
     <favorites_list name="test" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="tree_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tree/tree_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+              <folding>
+                <element signature="e#14#41#0" expanded="true" />
+                <element signature="n#!!block;n#TestAvl_Insert_Exist#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_n2n1nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_n2n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_n21nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_n21n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_n211#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_2n1nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_2n1n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_2n11#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_21nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Insert_21#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_NotFound#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_SingleRoot#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_SingleLeft#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_SingleRight#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_Root#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n21nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n21n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n210#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n211#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n20#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_n2n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_2n1nil#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_2n1n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_2n10#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_2n11#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_20#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_21#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_Subtree_n20#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_Subtree_20#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_Subtree_n2n1#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_RightWithLeftLeaf#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_LeftWithRightLeaf#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_RightRoot#0" expanded="false" />
+                <element signature="n#!!block;n#TestAvl_Delete_RightRootNode#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+              <folding>
+                <element signature="e#14#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avl_tree.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tree/avl_tree.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="465" column="0" selection-start-line="465" selection-start-column="0" selection-end-line="465" selection-end-column="0" />
+              <folding>
+                <element signature="e#14#110#0" expanded="true" />
+                <element signature="n#!!block;n#String#0" expanded="false" />
+                <element signature="e#1150#1189#0" expanded="false" />
+                <element signature="n#!!block;n#Insert#0" expanded="false" />
+                <element signature="e#2433#3028#0" expanded="false" />
+                <element signature="n#!!block;n#Delete#0" expanded="false" />
+                <element signature="n#!!block;n#Find#0" expanded="false" />
+                <element signature="n#!!block;n#Count#0" expanded="false" />
+                <element signature="n#!!block;n#Min#0" expanded="false" />
+                <element signature="n#!!block;n#Max#0" expanded="false" />
+                <element signature="n#!!block;n#Asc#0" expanded="false" />
+                <element signature="n#!!block;n#Desc#0" expanded="false" />
+                <element signature="n#!!block;n#Validate#0" expanded="false" />
+                <element signature="n#!!block;n#node_height#0" expanded="false" />
+                <element signature="n#!!block;n#find#0" expanded="false" />
+                <element signature="n#!!block;n#delete#0" expanded="false" />
+                <element signature="e#5626#5894#0" expanded="false" />
+                <element signature="e#7275#8044#0" expanded="false" />
+                <element signature="e#8047#8812#0" expanded="false" />
+                <element signature="n#!!block;n#node_right_rotate#0" expanded="false" />
+                <element signature="n#!!block;n#node_left_rotate#0" expanded="false" />
+                <element signature="n#!!block;n#Print#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,8 +171,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/tree/binary_tree.go" />
         <option value="$PROJECT_DIR$/tree/main.go" />
         <option value="$PROJECT_DIR$/tree/tree_test.go" />
+        <option value="$PROJECT_DIR$/tree/avl_tree.go" />
+        <option value="$PROJECT_DIR$/main/main.go" />
       </list>
     </option>
   </component>
@@ -75,7 +210,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -94,10 +231,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -105,7 +268,49 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GO_FMT" value="false" />
   </component>
-  <component name="RunManager" selected="Go Test.Tests">
+  <component name="RunManager" selected="Go Single File.go run main.go">
+    <configuration default="false" name="TestAvl_Delete_n21nil in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test/tree" />
+      <pattern value="^TestAvl_Delete_n21nil$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestAvl_Delete_Root in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test/tree" />
+      <pattern value="^TestAvl_Delete_Root$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestAvl_Delete_n211 in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test/tree" />
+      <pattern value="^TestAvl_Delete_n211$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestAvl_Delete_2n11 in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="test/tree" />
+      <pattern value="^TestAvl_Delete_2n11$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run main.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main/main.go" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -332,12 +537,40 @@
       <filePath value="$PROJECT_DIR$" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="TestInsert" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$/tree" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$/tree" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="TestAvl_Insert*" />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Go Test.Tests" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestInsert" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_n21nil in tree_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_Root in tree_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_n211 in tree_test.go" />
+      <item index="5" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_2n11 in tree_test.go" />
+      <item index="6" class="java.lang.String" itemvalue="Go Single File.go run main.go" />
     </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run main.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_2n11 in tree_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_n211 in tree_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_Root in tree_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestAvl_Delete_n21nil in tree_test.go" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -361,52 +594,75 @@
       <option name="project" value="LOCAL" />
       <updated>1466517025908</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="some test projects&#10;">
+      <created>1466517082486</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466517082486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2016.06.21 at 16h 32m 28s.xml">
+    <history-entry file="TestAvl_Delete_n211_in_tree_test_go - 2016.07.13 at 17h 12m 27s.xml">
+      <configuration name="TestAvl_Delete_n211 in tree_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2016.07.13 at 17h 12m 43s.xml">
       <configuration name="Tests" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Tests - 2016.06.21 at 16h 33m 59s.xml">
+    <history-entry file="Tests - 2016.07.13 at 17h 16m 23s.xml">
       <configuration name="Tests" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Tests - 2016.06.21 at 16h 34m 20s.xml">
+    <history-entry file="Tests - 2016.07.13 at 17h 21m 20s.xml">
       <configuration name="Tests" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Tests - 2016.06.21 at 16h 34m 55s.xml">
+    <history-entry file="Tests - 2016.07.13 at 17h 21m 54s.xml">
       <configuration name="Tests" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Tests - 2016.06.21 at 16h 35m 12s.xml">
+    <history-entry file="Tests - 2016.07.13 at 17h 22m 37s.xml">
+      <configuration name="Tests" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2016.07.14 at 17h 08m 31s.xml">
+      <configuration name="Tests" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2016.07.14 at 17h 41m 14s.xml">
+      <configuration name="Tests" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2016.07.14 at 18h 26m 15s.xml">
+      <configuration name="Tests" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests - 2016.07.14 at 18h 26m 26s.xml">
       <configuration name="Tests" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26109937" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19238901" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3128964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1703125" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -425,7 +681,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="some test projects&#10;" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="61" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -433,11 +691,48 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.git/tree/avl_tree.go">
+    <entry file="file://$PROJECT_DIR$/tree/tree_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="527">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#41#0" expanded="true" />
+            <element signature="n#!!block;n#TestAvl_Insert_Exist#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n21n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n211#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n1n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n11#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_21#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_NotFound#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleRoot#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleLeft#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleRight#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Root#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n21n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n210#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n211#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n1n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n10#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n11#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_21#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_n20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightWithLeftLeaf#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_LeftWithRightLeaf#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightRoot#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightRootNode#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -445,127 +740,209 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/delete(-2-1)-leaf-result.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/delete(-20)-leaf-tree.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/delete(20)-leaf-result.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/delete(2-10)-leaf-tree.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/img/delete(rightroot)-result.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/tree_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#_Test_Avl_OnlyLeftLeft#0" expanded="false" />
-            <element signature="e#194#215#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_OnlyRightRight#0" expanded="false" />
-            <element signature="e#380#401#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_LeftRight1#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_LeftRight11#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_LeftRight12#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_LeftRight21#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_LeftRight22#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_RightLeft1#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_RightLeft11#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_RightLeft12#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_RightLeft21#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_RightLeft22#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_Avl_Random#0" expanded="false" />
-            <element signature="e#3923#3965#0" expanded="false" />
-            <element signature="n#!!block;n#_Test_TreeFind#0" expanded="false" />
-            <element signature="e#4236#4251#0" expanded="false" />
-            <element signature="e#4283#4309#0" expanded="false" />
-            <element signature="e#4340#4365#0" expanded="false" />
-            <element signature="e#4431#4464#0" expanded="false" />
-            <element signature="e#4497#4531#0" expanded="false" />
-            <element signature="e#4565#4599#0" expanded="false" />
-            <element signature="e#4648#4674#0" expanded="false" />
-            <element signature="e#4696#4727#0" expanded="false" />
-            <element signature="e#4750#4781#0" expanded="false" />
-            <element signature="e#4820#4840#0" expanded="false" />
-            <element signature="e#4882#4903#0" expanded="false" />
-            <element signature="e#4948#4979#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_NotFound#0" expanded="false" />
-            <element signature="e#5086#5165#0" expanded="false" />
-            <element signature="e#5125#5162#0" expanded="false" />
-            <element signature="e#5171#5212#0" expanded="false" />
-            <element signature="e#5267#5346#0" expanded="false" />
-            <element signature="e#5306#5343#0" expanded="false" />
-            <element signature="e#5352#5393#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_SingleRoot#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_SingleLeft#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_SingleRight#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_Root#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n21nil#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n21n1#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n210#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n211#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n20#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_n2n1#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_2n1nil#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_2n10#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_2n11#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_20#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteLeaf_21#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteSubtree_n20#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteSubtree_20#0" expanded="false" />
-            <element signature="n#!!block;n#Test_DeleteSubtree_n2n1#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_RightWithLeftLeaf#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_LeftWithRightLeaf#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_RightRoot#0" expanded="false" />
-            <element signature="n#!!block;n#Test_Delete_RightRootNode#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tree/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#14#25#0" expanded="true" />
+            <element signature="e#14#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tree/avl_tree.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        <state relative-caret-position="2601">
+          <caret line="415" column="47" selection-start-line="415" selection-start-column="47" selection-end-line="415" selection-end-column="47" />
           <folding>
             <element signature="e#14#110#0" expanded="true" />
+            <element signature="n#!!block;n#String#0" expanded="false" />
+            <element signature="e#1150#1189#0" expanded="false" />
+            <element signature="n#!!block;n#Insert#0" expanded="false" />
+            <element signature="e#2433#3028#0" expanded="false" />
+            <element signature="n#!!block;n#Delete#0" expanded="false" />
+            <element signature="n#!!block;n#Find#0" expanded="false" />
+            <element signature="n#!!block;n#Count#0" expanded="false" />
+            <element signature="n#!!block;n#Min#0" expanded="false" />
+            <element signature="n#!!block;n#Max#0" expanded="false" />
+            <element signature="n#!!block;n#Asc#0" expanded="false" />
+            <element signature="n#!!block;n#Desc#0" expanded="false" />
+            <element signature="n#!!block;n#Validate#0" expanded="false" />
+            <element signature="n#!!block;n#node_height#0" expanded="false" />
+            <element signature="n#!!block;n#find#0" expanded="false" />
+            <element signature="n#!!block;n#delete#0" expanded="false" />
+            <element signature="e#5626#5894#0" expanded="false" />
+            <element signature="e#7275#8044#0" expanded="false" />
+            <element signature="e#8047#8812#0" expanded="false" />
+            <element signature="n#!!block;n#node_right_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#node_left_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#Print#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.git/tree/avl_tree.go" />
+    <entry file="file://$PROJECT_DIR$/tree/delete(-2-1)-leaf-result.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/delete(-20)-leaf-tree.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/delete(20)-leaf-result.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/delete(2-10)-leaf-tree.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/img/delete(rightroot)-result.jpg" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2210">
           <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/img/graph_random.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/img/graph_leftright.jpg" />
+    <entry file="file://$PROJECT_DIR$/tree/img/graph_left.jpg" />
+    <entry file="file://C:/Go/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../structure/tree/avl_tree.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/img/graph_left2.jpg" />
+    <entry file="file://C:/Go/src/runtime/proc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/runtime/iface.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/img/graph_left1.jpg" />
+    <entry file="file://C:/Go/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="442" column="0" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/binary_tree.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/math/rand/rand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-61">
+          <caret line="197" column="5" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#14#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bad_tree.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/avl_tree.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="465" column="0" selection-start-line="465" selection-start-column="0" selection-end-line="465" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#110#0" expanded="true" />
+            <element signature="n#!!block;n#String#0" expanded="false" />
+            <element signature="e#1150#1189#0" expanded="false" />
+            <element signature="n#!!block;n#Insert#0" expanded="false" />
+            <element signature="e#2433#3028#0" expanded="false" />
+            <element signature="n#!!block;n#Delete#0" expanded="false" />
+            <element signature="n#!!block;n#Find#0" expanded="false" />
+            <element signature="n#!!block;n#Count#0" expanded="false" />
+            <element signature="n#!!block;n#Min#0" expanded="false" />
+            <element signature="n#!!block;n#Max#0" expanded="false" />
+            <element signature="n#!!block;n#Asc#0" expanded="false" />
+            <element signature="n#!!block;n#Desc#0" expanded="false" />
+            <element signature="n#!!block;n#Validate#0" expanded="false" />
+            <element signature="n#!!block;n#node_height#0" expanded="false" />
+            <element signature="n#!!block;n#find#0" expanded="false" />
+            <element signature="n#!!block;n#delete#0" expanded="false" />
+            <element signature="e#5626#5894#0" expanded="false" />
+            <element signature="e#7275#8044#0" expanded="false" />
+            <element signature="e#8047#8812#0" expanded="false" />
+            <element signature="n#!!block;n#node_right_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#node_left_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#Print#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/tree_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#14#41#0" expanded="true" />
+            <element signature="n#!!block;n#TestAvl_Insert_Exist#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n21n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_n211#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n1n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_2n11#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Insert_21#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_NotFound#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleRoot#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleLeft#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_SingleRight#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Root#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n21nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n21n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n210#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n211#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n1nil#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n1n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n10#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_2n11#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_21#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_n20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_20#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_Subtree_n2n1#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightWithLeftLeaf#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_LeftWithRightLeaf#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightRoot#0" expanded="false" />
+            <element signature="n#!!block;n#TestAvl_Delete_RightRootNode#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#121#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -23,7 +23,6 @@ func (t *Binary_tree) Insert(v int) {
 	if node != nil {
 		return
 	}
-
 	t.node_count++
 	node = &binary_node{Id: v}
 	if parent == nil {

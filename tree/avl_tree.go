@@ -12,8 +12,10 @@ import (
 	"os/exec"
 )
 
+var Log_tree bool
+
 type avl_node struct {
-	Id int
+	Id int32
 
 	Balance int8
 
@@ -22,36 +24,144 @@ type avl_node struct {
 	Right  *avl_node `json:",omitempty"`
 }
 
+func (n *avl_node) String() string {
+	if n == nil {
+		return ""
+	}
+
+	var b bytes.Buffer
+	b.WriteString("{")
+	if n.Left != nil {
+		b.WriteString(fmt.Sprintf("%v(%v):", n.Left.Id, n.Left.Balance))
+		if n.Left.parent != nil {
+			b.WriteString(fmt.Sprintf("%v", n.Left.parent.Id))
+		} else {
+			b.WriteString("n")
+		}
+	} else {
+		b.WriteString("null ")
+	}
+	b.WriteString(" < ")
+	b.WriteString(fmt.Sprintf("%v(%v):", n.Id, n.Balance))
+	if n.parent != nil {
+		b.WriteString(fmt.Sprintf("%v", n.parent.Id))
+	} else {
+		b.WriteString("n")
+	}
+	b.WriteString(" > ")
+	if n.Right != nil {
+		b.WriteString(fmt.Sprintf("%v(%v):", n.Right.Id, n.Right.Balance))
+		if n.Right.parent != nil {
+			b.WriteString(fmt.Sprintf("%v", n.Right.parent.Id))
+		} else {
+			b.WriteString("n")
+		}
+	} else {
+		b.WriteString("null ")
+	}
+	b.WriteString("}")
+	return b.String()
+}
+
 type Avl_tree struct {
 	Len  uint16
 	Root *avl_node
 }
 
-func (t *Avl_tree) Insert(id int) {
+func (t *Avl_tree) Insert(id int32) {
 	parent := find(t.Root, id)
 	if parent != nil && parent.Id == id {
 		return
 	}
-	switch {
-	case parent == nil:
-		t.Root = &avl_node{Id: id}
-	case parent.Id == id:
+	var node *avl_node
+	node = new(avl_node)
+	node.Id, node.parent = id, parent
+	t.Len++
+	if parent == nil {
+		t.Root = node
 		return
-	case parent != nil:
-		t.Len++
-		node := &avl_node{Id: id, parent: parent}
-		switch {
-		case parent.Id > id:
-			parent.Left = node
-		case parent.Id < id:
-			parent.Right = node
-		}
+	}
+	switch {
+	case parent.Id > id:
+		parent.Left = node
+	case parent.Id < id:
+		parent.Right = node
+	}
 
-		t.rotate(node)
+	// балансировка структуры дерева
+	var i uint8
+	son := node
+	var subtree *avl_node
+balance:
+	for parent != nil {
+		switch {
+		case parent.Left == son:
+			parent.Balance -= 1
+		case parent.Right == son:
+			parent.Balance += 1
+		}
+		switch parent.Balance {
+		case -2:
+			switch son.Balance {
+			case 1: // LR
+				subtree = son.Right
+				if parent.Right == nil {
+					parent.Balance, son.Balance = 0, 0
+				} else {
+					switch subtree.Balance {
+					case 1:
+						parent.Balance, son.Balance, subtree.Balance = 0, -1, 0
+					case -1:
+						parent.Balance, son.Balance, subtree.Balance = 1, 0, 0
+					default:
+						panic("not implemented")
+					}
+				}
+				node_left_rotate(son)
+				son, parent = parent, node_right_rotate(parent)
+			case -1: // R
+				parent.Balance, son.Balance = 0, 0
+				son, parent = parent, node_right_rotate(parent)
+			default: // R
+				panic("not implemented")
+			}
+		case 2:
+			switch son.Balance {
+			case 1: // L
+				parent.Balance, son.Balance = 0, 0
+				parent = node_left_rotate(parent)
+			case -1: // RL
+				subtree = son.Left
+				if parent.Left == nil {
+					parent.Balance, son.Balance = 0, 0
+				} else {
+					switch subtree.Balance {
+					case 1:
+						parent.Balance, son.Balance, subtree.Balance = -1, 0, 0
+					case -1:
+						parent.Balance, son.Balance, subtree.Balance = 0, 1, 0
+					default:
+						panic("not implemented")
+					}
+				}
+				node_right_rotate(son)
+				parent = node_left_rotate(parent)
+			default:
+				panic("not implemented")
+			}
+		}
+		if parent.parent == nil {
+			t.Root = parent
+		}
+		if parent.Balance == 0 {
+			break balance
+		}
+		son, parent = parent, parent.parent
+		i++
 	}
 }
 
-func (t *Avl_tree) Delete(id int) (err error) {
+func (t *Avl_tree) Delete(id int32) (err error) {
 	node := find(t.Root, id)
 	if node == nil || node.Id != id {
 		err = errors.New(fmt.Sprintf("id %v not found", id))
@@ -61,199 +171,7 @@ func (t *Avl_tree) Delete(id int) (err error) {
 	return
 }
 
-func (t *Avl_tree) delete(node *avl_node) {
-	parent := node.parent
-	// определение направления движения
-	var delta int8
-	switch {
-	case node.parent == nil:
-		delta = 0
-	case node.parent.Left == node:
-		delta = 1
-	case node.parent.Right == node:
-		delta = -1
-	}
-	// удаление узла из структуры дерева
-	switch {
-	case node.Left == nil && node.Right == nil:
-		if t.Root == node {
-			t.Root = nil
-		}
-		switch delta {
-		case 1:
-			node.parent.Left = nil
-		case -1:
-			node.parent.Right = nil
-		}
-	case node.Left != nil && node.Right == nil:
-		if t.Root == node {
-			t.Root = node.Left
-		}
-		node.Left.parent = node.parent
-		switch delta {
-		case 1:
-			node.parent.Left = node.Left
-		case -1:
-			node.parent.Right = node.Left
-		}
-	case node.Left == nil && node.Right != nil:
-		if t.Root == node {
-			t.Root = node.Right
-		}
-		node.Right.parent = node.parent
-		switch delta {
-		case 1:
-			node.parent.Left = node.Right
-		case -1:
-			node.parent.Right = node.Right
-		}
-	case node.Left != nil && node.Right != nil:
-		nearest := next_node(node)
-		parent = nearest.parent
-		// copy
-		node.Id = nearest.Id
-		if nearest.parent != node {
-			// удаление из поддерева
-			nearest.parent.Left = nearest.Right
-			if nearest.Right != nil {
-				nearest.Right.parent = nearest.parent
-			}
-			delta = 1
-		} else {
-			// удаление правого элемента
-			node.Right = nearest.Right
-			if nearest.Right != nil {
-				nearest.Right.parent = node
-			}
-			delta = -1
-		}
-
-		nearest.parent = nil
-		nearest.Left = nil
-		nearest.Right = nil
-	}
-
-	//free(node)
-	// балансировка структуры дерева
-balance:
-	for parent != nil {
-		parent.Balance += delta
-		// -2, 1,-1 =LR> 1, 0, 0
-		// -2, 1, 0 =LR> 0, 0, 0
-		// -2, 1, 1 =LR>-1, 0, 0
-		// -2, 0    =R> -1, 1
-		// -2,-1    =R>  0 ,0
-		//  2, 1    =L>  0, 0
-		//  2, 0    =L>  1,-1
-		//  2,-1,-1 =RL> 0, 1, 0
-		//  2,-1, 0 =RL> 0, 0, 0
-		//  2,-1, 1 =RL> 1, 0, 0
-		switch {
-		case parent.Balance == -1 || parent.Balance == 1:
-			break balance
-		case parent.Balance == -2:
-			son := parent.Left
-			switch {
-			case son.Balance == 1:
-				if parent.Right == nil {
-					parent.Balance, son.Balance = 0, 0
-				} else {
-					subtree := son.Right
-					switch {
-					case subtree.Balance == -1:
-						parent.Balance, son.Balance, subtree.Balance = 1, 0, 0
-					case subtree.Balance == 0:
-						parent.Balance, son.Balance, subtree.Balance = 0, 0, 0
-					case subtree.Balance == 1:
-						parent.Balance, son.Balance, subtree.Balance = -1, 0, 0
-					}
-				}
-				son := node_left_rotate(parent.Left)
-				son.parent, parent.Left = parent, son
-				parent = node_right_rotate(parent)
-			case son.Balance == 0:
-				parent.Balance, son.Balance = -1, 1
-				parent = node_right_rotate(parent)
-			case son.Balance == -1:
-				parent.Balance, son.Balance = 0, 0
-				parent = node_right_rotate(parent)
-			}
-		case parent.Balance == 2:
-			son := parent.Right
-			switch {
-			case son.Balance == 1:
-				parent.Balance, son.Balance = 0, 0
-				parent = node_left_rotate(parent)
-			case son.Balance == 0:
-				parent.Balance, son.Balance = 1, -1
-				parent = node_left_rotate(parent)
-			case son.Balance == -1:
-				if parent.Left == nil {
-					parent.Balance, son.Balance = 0, 0
-				} else {
-					subtree := son.Left
-					switch {
-					case subtree.Balance == -1:
-						parent.Balance, son.Balance, subtree.Balance = 0, 1, 0
-					case subtree.Balance == 0:
-						parent.Balance, son.Balance, subtree.Balance = 0, 0, 0
-					case subtree.Balance == 1:
-						parent.Balance, son.Balance, subtree.Balance = 1, 0, 0
-					}
-				}
-				son := node_right_rotate(parent.Right)
-				son.parent, parent.Right = parent, son
-				parent = node_left_rotate(parent)
-			}
-		}
-		node = parent
-		parent = parent.parent
-		switch {
-		case parent == nil:
-			t.Root = node
-		case parent.Left == node:
-			delta = 1
-		case parent.Right == node:
-			delta = -1
-		}
-	}
-}
-
-func node_right_rotate(node *avl_node) *avl_node {
-	son := node.Left
-	subtree := son.Right
-	son.parent = node.parent
-	node.parent = son
-	if subtree != nil {
-		subtree.parent = node
-	}
-	node.Left = subtree
-	son.Right = node
-	return son
-}
-
-func node_left_rotate(node *avl_node) *avl_node {
-	son := node.Right
-	subtree := son.Left
-	son.parent = node.parent
-	node.parent = son
-	if subtree != nil {
-		subtree.parent = node
-	}
-	node.Right = subtree
-	son.Left = node
-	return son
-}
-
-func next_node(node *avl_node) (next *avl_node) {
-	next = node.Right
-	for next.Left != nil {
-		next = next.Left
-	}
-	return
-}
-
-func (t *Avl_tree) Find(id int) (result interface{}, ok bool) {
+func (t *Avl_tree) Find(id int32) (result interface{}, ok bool) {
 	n := find(t.Root, id)
 	ok = n != nil
 	result = n.Id
@@ -264,7 +182,7 @@ func (t *Avl_tree) Count() uint16 {
 	return t.Len
 }
 
-func (t *Avl_tree) Min() int {
+func (t *Avl_tree) Min() int32 {
 	node := t.Root
 	for {
 		if node.Left == nil {
@@ -275,7 +193,7 @@ func (t *Avl_tree) Min() int {
 	return node.Id
 }
 
-func (t *Avl_tree) Max() int {
+func (t *Avl_tree) Max() int32 {
 	node := t.Root
 	for {
 		if node.Right == nil {
@@ -286,13 +204,57 @@ func (t *Avl_tree) Max() int {
 	return node.Id
 }
 
-func (t *Avl_tree) Asc(func(int)) {
+func (t *Avl_tree) Asc(func(int32)) {
 }
 
-func (t *Avl_tree) Desc(func(int)) {
+func (t *Avl_tree) Desc(func(int32)) {
 }
 
-func find(root *avl_node, id int) (node *avl_node) {
+func (t *Avl_tree) Validate() (err error) {
+	_, err = node_height(t.Root)
+	return
+}
+
+func node_height(node *avl_node) (height int8, err error) {
+	if node == nil {
+		return
+	}
+
+	if node.Left != nil && node.Left.Id >= node.Id || node.Right != nil && node.Right.Id <= node.Id {
+		err = errors.New(fmt.Sprintf("%v node structure not valid", node))
+		return
+	}
+
+	if node.Left != nil && (node.Left.parent == nil || node.Left.parent.Id != node.Id) {
+		err = errors.New(fmt.Sprintf("%v left parent wrong right(%v)-left(%v)", node, node.Right, node.Left))
+		return
+	}
+	if node.Right != nil && (node.Right.parent == nil || node.Right.parent.Id != node.Id) {
+		err = errors.New(fmt.Sprintf("%v right parent wrong right(%v)-left(%v)", node, node.Right, node.Left))
+		return
+	}
+
+	var left_height int8
+	if left_height, err = node_height(node.Left); err != nil {
+		return
+	}
+	var right_height int8
+	if right_height, err = node_height(node.Right); err != nil {
+		return
+	}
+
+	if node.Balance != right_height-left_height {
+		err = errors.New(fmt.Sprintf("%v balance not valid right(%v)-left(%v)", node, right_height, left_height))
+	}
+
+	if height = left_height; left_height < right_height {
+		height = right_height
+	}
+	height++
+	return
+}
+
+func find(root *avl_node, id int32) (node *avl_node) {
 	for {
 		switch {
 		case root == nil:
@@ -311,120 +273,225 @@ func find(root *avl_node, id int) (node *avl_node) {
 	return
 }
 
-func (t *Avl_tree) rotate(node *avl_node) {
-	var parent, son, subtree *avl_node
-	son, parent = node, node.parent
-	var delta int8
-	for {
-		delta = 0
+func (t *Avl_tree) delete(node *avl_node) {
+	if Log_tree {
+		t.PrintFile("tree_init.jpg")
+	}
+	parent := node.parent
+	// определение направления движения
+	// удаление узла из структуры дерева
+	switch {
+	case node.Left == nil && node.Right == nil:
+		if t.Root == node {
+			t.Root = nil
+		}
+		switch {
+		case parent == nil:
+		case parent.Left == node:
+			parent.Left = nil
+			parent.Balance += 1
+		case parent.Right == node:
+			parent.Right = nil
+			parent.Balance -= 1
+		}
+	case node.Left != nil && node.Right == nil:
+		if t.Root == node {
+			t.Root = node.Left
+		}
+		node.Left.parent = node.parent
 		switch {
 		case parent == nil:
 			return
-		case parent.Left != nil && parent.Left.Id == son.Id:
-			delta = -1
-		case parent.Right != nil && parent.Right.Id == son.Id:
-			delta = 1
+		case parent.Left == node:
+			parent.Left = node.Left
+			parent.Balance += 1
+		case parent.Right == node:
+			parent.Right = node.Left
+			parent.Balance -= 1
 		}
-		parent.Balance += delta
-		if parent.Balance == 0 {
+	case node.Left == nil && node.Right != nil:
+		if t.Root == node {
+			t.Root = node.Right
+		}
+		node.Right.parent = node.parent
+		switch {
+		case parent == nil:
 			return
+		case parent.Left == node:
+			parent.Left = node.Right
+			parent.Balance += 1
+		case parent.Right == node:
+			parent.Right = node.Right
+			parent.Balance -= 1
 		}
-		if parent.Balance > 1 || parent.Balance < -1 {
+	case node.Left != nil && node.Right != nil:
+		nearest := next_node(node)
+		parent = nearest.parent
+		// copy
+		node.Id = nearest.Id
+		nearest.Id = 0
+		if parent.Id != node.Id {
+			parent.Left = nearest.Right
+			parent.Balance += 1
+		} else {
+			parent.Right = nearest.Right
+			parent.Balance -= 1
+		}
+		if nearest.Right != nil {
+			nearest.Right.parent = nearest.parent
+		}
+
+
+		nearest.parent = nil
+		nearest.Left = nil
+		nearest.Right = nil
+		//free(nearest)
+	}
+	//free(node)
+	var son *avl_node
+	var subtree *avl_node
+	i := 0
+balance:
+	for parent != nil {
+		if Log_tree {
+			t.PrintFile(fmt.Sprintf("tree_%v.jpg", i))
+			i++
+		}
+		switch parent.Balance {
+		case -1:
+			break balance
+		case 1:
+			break balance
+		case -2:
+			son = parent.Left
+			switch son.Balance {
+			case 1:
+				if parent.Right == nil {
+					parent.Balance, son.Balance = 0, 0
+				} else {
+					subtree = son.Right
+					switch subtree.Balance {
+					case -1:
+						parent.Balance, son.Balance, subtree.Balance = 1, 0, 0
+					case 0:
+						parent.Balance, son.Balance, subtree.Balance = 0, 0, 0
+					case 1:
+						parent.Balance, son.Balance, subtree.Balance = 0, -1, 0
+					}
+				}
+				node_left_rotate(son)
+				if Log_tree {
+					t.PrintFile(fmt.Sprintf("tree_%v.jpg", i))
+					i++
+				}
+				parent = node_right_rotate(parent)
+			case 0:
+				parent.Balance, son.Balance = -1, 1
+				parent = node_right_rotate(parent)
+			case -1:
+				parent.Balance, son.Balance = 0, 0
+				parent = node_right_rotate(parent)
+			}
+		case 2:
+			son = parent.Right
+			switch son.Balance {
+			case 1:
+				parent.Balance, son.Balance = 0, 0
+				parent = node_left_rotate(parent)
+			case 0:
+				parent.Balance, son.Balance = 1, -1
+				parent = node_left_rotate(parent)
+			case -1:
+				if parent.Left == nil {
+					parent.Balance, son.Balance = 0, 0
+				} else {
+					subtree = son.Left
+					switch subtree.Balance {
+					case -1:
+						parent.Balance, son.Balance, subtree.Balance = 0, 1, 0
+					case 0:
+						parent.Balance, son.Balance, subtree.Balance = 0, 0, 0
+					case 1:
+						parent.Balance, son.Balance, subtree.Balance = -1, 0, 0
+					}
+				}
+				node_right_rotate(son)
+				if Log_tree {
+					t.PrintFile(fmt.Sprintf("tree_%v.jpg", i))
+					i++
+				}
+				parent = node_left_rotate(parent)
+			}
+		default:
+			node, parent = parent, parent.parent
 			switch {
-			case son.Left != nil && subtree.Id == son.Left.Id && parent.Left != nil && son.Id == parent.Left.Id:
-				right_rotate(parent, son)
-				parent.Balance, son.Balance = 0, 0
-				parent, son = son, parent
-			case son.Right != nil && subtree.Id == son.Right.Id && parent.Right != nil && son.Id == parent.Right.Id:
-				left_rotate(parent, son)
-				parent.Balance, son.Balance = 0, 0
-				parent, son = son, parent
-			case son.Right != nil && subtree.Id == son.Right.Id && parent.Left != nil && son.Id == parent.Left.Id:
-				left_rotate(son, subtree)
-				switch {
-				case subtree.Balance == 0:
-					subtree.Balance = -son.Balance // 1 => -1; -1 => 1
-					son.Balance = 0                // 1, -1 => 0
-				case subtree.Balance == -1:
-					subtree.Balance = -2 // -1 => -2
-					son.Balance = 0      // 1 => 0
-				case subtree.Balance == 1:
-					subtree.Balance = -1 // 1 => -1
-					son.Balance = -1     // 1 => -1
-				}
-				right_rotate(parent, subtree)
-				if node.Id != subtree.Id {
-					parent.Balance, subtree.Balance = son.Balance+1, 0
-				} else {
-					parent.Balance, subtree.Balance = 0, 0
-				}
-				parent = subtree
-			case son.Left != nil && subtree.Id == son.Left.Id && parent.Right != nil && son.Id == parent.Right.Id:
-				right_rotate(son, subtree)
-				switch {
-				case subtree.Balance == 0:
-					subtree.Balance = -son.Balance // 1 => -1; -1 => 1
-					son.Balance = 0                // 1, -1 => 0
-				case subtree.Balance == 1:
-					subtree.Balance = 2 // 1 => 2
-					son.Balance = 0     // -1 => 0
-				case subtree.Balance == -1:
-					subtree.Balance = 1 // -1 => 1
-					son.Balance = 1     // 1 => 1
-				}
-				if subtree.Balance == 2 {
-					parent.Balance, subtree.Balance = -1, 0
-				} else {
-					parent.Balance, subtree.Balance = 0, 0
-				}
-				left_rotate(parent, subtree)
-				parent = subtree
-			default:
-				panic("invalid")
+			case parent == nil:
+			case parent.Left == node:
+				parent.Balance += 1
+			case parent.Right == node:
+				parent.Balance -= 1
 			}
-			if parent.parent == nil {
-				t.Root = parent
-			}
-			return
 		}
-		subtree = son
-		son = parent
-		parent = parent.parent
+	}
+
+	if parent == nil {
+		t.Root = node
+	}
+	if Log_tree {
+		t.PrintFile("tree_result.jpg")
 	}
 }
 
-func right_rotate(parent *avl_node, son *avl_node) {
-	son.parent = parent.parent
-	if parent.parent != nil {
-		if parent.parent.Left != nil && parent.parent.Left.Id == parent.Id {
-			parent.parent.Left = son
-		} else if parent.parent.Right != nil && parent.parent.Right.Id == parent.Id {
-			parent.parent.Right = son
+func node_right_rotate(node *avl_node) *avl_node {
+	parent := node.parent
+	son := node.Left
+	subtree := son.Right
+	if parent != nil {
+		switch {
+		case parent.Left == node:
+			parent.Left = son
+		case parent.Right == node:
+			parent.Right = son
 		}
 	}
-	parent.parent = son
-	parent.Left = son.Right
-	if son.Right != nil {
-		son.Right.parent = parent
+	son.parent = node.parent
+	son.Right = node
+	node.parent = son
+	node.Left = subtree
+	if subtree != nil {
+		subtree.parent = node
 	}
-	son.Right = parent
+	return son
 }
 
-func left_rotate(parent *avl_node, son *avl_node) {
-	son.parent = parent.parent
-	if parent.parent != nil {
-		if parent.parent.Left != nil && parent.parent.Left.Id == parent.Id {
-			parent.parent.Left = son
-		} else if parent.parent.Right != nil && parent.parent.Right.Id == parent.Id {
-			parent.parent.Right = son
+func node_left_rotate(node *avl_node) *avl_node {
+	parent := node.parent
+	son := node.Right
+	subtree := son.Left
+	if parent != nil {
+		switch {
+		case parent.Left == node:
+			parent.Left = son
+		case parent.Right == node:
+			parent.Right = son
 		}
 	}
-	parent.parent = son
-	parent.Right = son.Left
-	if son.Left != nil {
-		son.Left.parent = parent
+	son.parent = node.parent
+	son.Left = node
+	node.parent = son
+	node.Right = subtree
+	if subtree != nil {
+		subtree.parent = node
 	}
-	son.Left = parent
+	return son
+}
+
+func next_node(node *avl_node) (next *avl_node) {
+	next = node.Right
+	for next.Left != nil {
+		next = next.Left
+	}
+	return
 }
 
 func (t *Avl_tree) Print(w io.Writer) {
@@ -483,7 +550,11 @@ func print_node(n *avl_node, doc *bytes.Buffer) {
 		if n.Left.Balance == -2 || n.Left.Balance == 2 {
 			color = "red"
 		}
-		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.Left.Id, n.Id, n.Left.Balance, color))
+		pid := "n"
+		if n.Left.parent != nil {
+			pid = fmt.Sprintf("%v", n.Left.parent.Id)
+		}
+		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.Left.Id, pid, n.Left.Balance, color))
 		doc.WriteString(fmt.Sprintf("%v -> %v [color=black];", n.Id, n.Left.Id))
 	} else {
 		doc.WriteString(fmt.Sprintf("nl%v [shape=point];", n.Id))
@@ -493,7 +564,11 @@ func print_node(n *avl_node, doc *bytes.Buffer) {
 		if n.Right.Balance == -2 || n.Right.Balance == 2 {
 			color = "red"
 		}
-		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.Right.Id, n.Id, n.Right.Balance, color))
+		pid := "n"
+		if n.Right.parent != nil {
+			pid = fmt.Sprintf("%v", n.Right.parent.Id)
+		}
+		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.Right.Id, pid, n.Right.Balance, color))
 		doc.WriteString(fmt.Sprintf("%v -> %v [color=blue];", n.Id, n.Right.Id))
 	} else {
 		doc.WriteString(fmt.Sprintf("nr%v [shape=point];", n.Id))
