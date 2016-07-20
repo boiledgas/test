@@ -9,12 +9,12 @@ type Node interface {
 }
 
 type Tree interface {
-	Insert(int32)
-	Delete(int32)
+	Insert(int32, interface{})
+	Delete(int32) interface{}
 	Find(int32) (interface{}, bool)
 	Count() uint16
-	Min() int32
-	Max() int32
+	Min() interface{}
+	Max() interface{}
 	Asc(func(int32))
 	Desc(func(int32))
 	Validate() (bool, error)
