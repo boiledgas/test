@@ -63,22 +63,65 @@ func (n *node) String() string {
 	return b.String()
 }
 
+func (n *node) write(doc *bytes.Buffer) {
+	color := "green"
+	if n.balance == -2 || n.balance == 2 {
+		color = "black"
+	}
+
+	if n.left != nil {
+		if n.left.balance == -2 || n.left.balance == 2 {
+			color = "red"
+		}
+		pid := "n"
+		if n.left.parent != nil {
+			pid = fmt.Sprintf("%v", n.left.parent.id)
+		}
+		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.left.id, pid, n.left.balance, color))
+		doc.WriteString(fmt.Sprintf("%v -> %v [color=black];", n.id, n.left.id))
+	} else {
+		doc.WriteString(fmt.Sprintf("nl%v [shape=point];", n.id))
+		doc.WriteString(fmt.Sprintf("%v -> nl%v [color=blue];", n.id, n.id))
+	}
+	if n.right != nil {
+		if n.right.balance == -2 || n.right.balance == 2 {
+			color = "red"
+		}
+		pid := "n"
+		if n.right.parent != nil {
+			pid = fmt.Sprintf("%v", n.right.parent.id)
+		}
+		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.right.id, pid, n.right.balance, color))
+		doc.WriteString(fmt.Sprintf("%v -> %v [color=blue];", n.id, n.right.id))
+	} else {
+		doc.WriteString(fmt.Sprintf("nr%v [shape=point];", n.id))
+		doc.WriteString(fmt.Sprintf("%v -> nr%v [color=blue];", n.id, n.id))
+	}
+
+	if n.left != nil {
+		n.left.write(doc)
+	}
+	if n.right != nil {
+		n.right.write(doc)
+	}
+}
+
 type Tree struct {
-	Len  uint16
-	Root *node
+	len  uint32
+	root *node
 }
 
 func (t *Tree) Insert(id int32, value interface{}) {
-	parent := find(t.Root, id)
+	parent := find(t.root, id)
 	if parent != nil && parent.id == id {
 		return
 	}
 	var n *node
 	n = new(node)
 	n.id, n.parent, n.value = id, parent, value
-	t.Len++
+	t.len++
 	if parent == nil {
-		t.Root = n
+		t.root = n
 		return
 	}
 	switch {
@@ -151,7 +194,7 @@ balance:
 			}
 		}
 		if parent.parent == nil {
-			t.Root = parent
+			t.root = parent
 		}
 		if parent.balance == 0 {
 			break balance
@@ -162,7 +205,7 @@ balance:
 }
 
 func (t *Tree) Delete(id int32) (value interface{}) {
-	n := find(t.Root, id)
+	n := find(t.root, id)
 	if n == nil || n.id != id {
 		return nil
 	}
@@ -173,42 +216,32 @@ func (t *Tree) Delete(id int32) (value interface{}) {
 }
 
 func (t *Tree) Find(id int32) (result interface{}, ok bool) {
-	n := find(t.Root, id)
-	ok = n != nil
-	result = n.value
+	ok = false
+	if n := find(t.root, id); n.id == id {
+		ok = true
+		result = n.value
+	}
 	return
 }
 
-func (t *Tree) Count() uint16 {
-	return t.Len
+func (t *Tree) Count() uint32 {
+	return t.len
 }
 
-func (t *Tree) Min() interface{} {
-	if t.Root == nil {
-		return nil
+func (t *Tree) Min() (int32, interface{}) {
+	if n := min(t.root); n != nil {
+		return n.id, n.value
 	}
-	n := t.Root
-	for {
-		if n.left == nil {
-			break
-		}
-		n = n.left
-	}
-	return n.id
+
+	return -1, nil
 }
 
-func (t *Tree) Max() interface{} {
-	if t.Root == nil {
-		return nil
+func (t *Tree) Max() (int32, interface{}) {
+	if n := max(t.root); n != nil {
+		return n.id, n.value
 	}
-	n := t.Root
-	for {
-		if n.right == nil {
-			break
-		}
-		n = n.right
-	}
-	return n.id
+
+	return -1, nil
 }
 
 func (t *Tree) Asc(func(int32)) {
@@ -218,7 +251,7 @@ func (t *Tree) Desc(func(int32)) {
 }
 
 func (t *Tree) Validate() (err error) {
-	_, err = node_height(t.Root)
+	_, err = node_height(t.root)
 	return
 }
 
@@ -289,8 +322,8 @@ func (t *Tree) delete(n *node) {
 	// удаление узла из структуры дерева
 	switch {
 	case n.left == nil && n.right == nil:
-		if t.Root == n {
-			t.Root = nil
+		if t.root == n {
+			t.root = nil
 		}
 		switch {
 		case parent == nil:
@@ -302,8 +335,8 @@ func (t *Tree) delete(n *node) {
 			parent.balance -= 1
 		}
 	case n.left != nil && n.right == nil:
-		if t.Root == n {
-			t.Root = n.left
+		if t.root == n {
+			t.root = n.left
 		}
 		n.left.parent = n.parent
 		switch {
@@ -317,8 +350,8 @@ func (t *Tree) delete(n *node) {
 			parent.balance -= 1
 		}
 	case n.left == nil && n.right != nil:
-		if t.Root == n {
-			t.Root = n.right
+		if t.root == n {
+			t.root = n.right
 		}
 		n.right.parent = n.parent
 		switch {
@@ -441,7 +474,7 @@ balance:
 	}
 
 	if parent == nil {
-		t.Root = n
+		t.root = n
 	}
 	if Log_tree {
 		t.PrintFile("tree_result.jpg")
@@ -492,20 +525,49 @@ func node_left_rotate(n *node) *node {
 	return son
 }
 
-func next_node(n *node) (next *node) {
-	next = n.right
-	for next.left != nil {
-		next = next.left
+func next_node(n *node) *node {
+	n = n.right
+	if n == nil {
+		return nil
+	}
+	for n.left != nil {
+		n = n.left
 	}
 	return
 }
 
+func min(n *node) *node {
+	if n == nil {
+		return nil
+	}
+	for {
+		if n.left == nil {
+			break
+		}
+		n = n.left
+	}
+	return n
+}
+
+func max(n *node) *node {
+	if n == nil {
+		return nil
+	}
+	for {
+		if n.right == nil {
+			break
+		}
+		n = n.right
+	}
+	return n
+}
+
 func (t *Tree) Print(w io.Writer) {
-	if t.Root == nil {
+	if t.root == nil {
 		return
 	}
 
-	n := t.Root
+	n := t.root
 	var doc bytes.Buffer
 
 	doc.WriteString("digraph AvlTree {")
@@ -518,49 +580,6 @@ func (t *Tree) Print(w io.Writer) {
 	doc.WriteString("}")
 
 	w.Write(doc.Bytes())
-}
-
-func (n *node) write(doc *bytes.Buffer) {
-	color := "green"
-	if n.balance == -2 || n.balance == 2 {
-		color = "black"
-	}
-
-	if n.left != nil {
-		if n.left.balance == -2 || n.left.balance == 2 {
-			color = "red"
-		}
-		pid := "n"
-		if n.left.parent != nil {
-			pid = fmt.Sprintf("%v", n.left.parent.id)
-		}
-		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.left.id, pid, n.left.balance, color))
-		doc.WriteString(fmt.Sprintf("%v -> %v [color=black];", n.id, n.left.id))
-	} else {
-		doc.WriteString(fmt.Sprintf("nl%v [shape=point];", n.id))
-		doc.WriteString(fmt.Sprintf("%v -> nl%v [color=blue];", n.id, n.id))
-	}
-	if n.right != nil {
-		if n.right.balance == -2 || n.right.balance == 2 {
-			color = "red"
-		}
-		pid := "n"
-		if n.right.parent != nil {
-			pid = fmt.Sprintf("%v", n.right.parent.id)
-		}
-		doc.WriteString(fmt.Sprintf(`%v [shape=circle, xlabel="%v(%v)", color=%v];`, n.right.id, pid, n.right.balance, color))
-		doc.WriteString(fmt.Sprintf("%v -> %v [color=blue];", n.id, n.right.id))
-	} else {
-		doc.WriteString(fmt.Sprintf("nr%v [shape=point];", n.id))
-		doc.WriteString(fmt.Sprintf("%v -> nr%v [color=blue];", n.id, n.id))
-	}
-
-	if n.left != nil {
-		n.left.write(doc)
-	}
-	if n.right != nil {
-		n.right.write(doc)
-	}
 }
 
 func (t *Tree) PrintFile(path string) {

@@ -23,6 +23,24 @@ type node struct {
 	value  interface{}
 }
 
+func (n *node) validate() error {
+	if n == nil {
+		return nil
+	}
+
+	if n.left != nil && n.left.id >= n.id || n.right != nil && n.right.id <= n.id {
+		return errors.New(fmt.Sprintf("%v node structure not valid", n))
+	}
+	if n.left != nil && (n.left.parent == nil || n.left.parent.id != n.id) {
+		return errors.New(fmt.Sprintf("%v left parent wrong right(%v)-left(%v)", n, n.right, n.left))
+	}
+	if n.right != nil && (n.right.parent == nil || n.right.parent.id != n.id) {
+		return errors.New(fmt.Sprintf("%v right parent wrong right(%v)-left(%v)", n, n.right, n.left))
+	}
+
+	return nil
+}
+
 func (n *node) String() string {
 	if n == nil {
 		return ""
@@ -144,10 +162,11 @@ func (t *Tree) Find(id int32) (result interface{}, ok bool) {
 		t.PrintFile(fmt.Sprintf("img\\%v-%v-find-0.jpg", i, id))
 	}
 	if n := find(t.root, id); n.id == id {
-		splay(n)
-		t.root = n
 		ok = true
 		result = n.value
+
+		splay(n)
+		t.root = n
 		if Log_tree {
 			t.PrintFile(fmt.Sprintf("img\\%v-%v-find-1.jpg", i, id))
 		}
@@ -184,9 +203,8 @@ func (t *Tree) Asc(func(int32)) {
 func (t *Tree) Desc(func(int32)) {
 }
 
-func (t *Tree) Validate() (err error) {
-	err = t.root.validate()
-	return
+func (t *Tree) Validate() error {
+	return t.root.validate()
 }
 
 func splay(n *node) {
@@ -376,24 +394,6 @@ func (n *node) write(doc *bytes.Buffer) {
 	if n.right != nil {
 		n.right.write(doc)
 	}
-}
-
-func (n *node) validate() error {
-	if n == nil {
-		return nil
-	}
-
-	if n.left != nil && n.left.id >= n.id || n.right != nil && n.right.id <= n.id {
-		return errors.New(fmt.Sprintf("%v node structure not valid", n))
-	}
-	if n.left != nil && (n.left.parent == nil || n.left.parent.id != n.id) {
-		return errors.New(fmt.Sprintf("%v left parent wrong right(%v)-left(%v)", n, n.right, n.left))
-	}
-	if n.right != nil && (n.right.parent == nil || n.right.parent.id != n.id) {
-		return errors.New(fmt.Sprintf("%v right parent wrong right(%v)-left(%v)", n, n.right, n.left))
-	}
-
-	return nil
 }
 
 // надо выпилить отсюда

@@ -12,7 +12,7 @@ type Tree interface {
 	Insert(int32, interface{})
 	Delete(int32) interface{}
 	Find(int32) (interface{}, bool)
-	Count() uint16
+	Count() int32
 	Min() interface{}
 	Max() interface{}
 	Asc(func(int32))

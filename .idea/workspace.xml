@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/tree/splay/splay_tree.go" line="203" />
+    <bookmark url="file://$PROJECT_DIR$/tree/splay/tree.go" line="221" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182574d6-7be0-47f6-ba1e-635e7f92c7c9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree/splay/img/tree.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree/avl/avl_tree.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree/splay/splay_tree.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree/splay/tree_test.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tree/avl_tree.go" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tree/binary_tree.go" afterPath="$PROJECT_DIR$/tree/binary/binary_tree.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tree/tree_test.go" afterPath="$PROJECT_DIR$/tree/avl/tree_test.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree/treap/treap.go" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tree/splay/img/tree.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tree/avl/avl_tree.go" afterPath="$PROJECT_DIR$/tree/avl/tree.go" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tree/binary/binary_tree.go" afterPath="$PROJECT_DIR$/tree/binary/tree.go" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tree/splay/splay_tree.go" afterPath="$PROJECT_DIR$/tree/splay/tree.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/main.go" afterPath="$PROJECT_DIR$/main/main.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tree/main.go" afterPath="$PROJECT_DIR$/tree/main.go" />
     </list>
     <ignored path="test.iws" />
@@ -82,21 +79,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="splay_tree.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tree/splay/splay_tree.go">
+      <file leaf-file-name="treap.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tree/treap/treap.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1370">
-              <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
+            <state relative-caret-position="344">
+              <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
               <folding>
-                <element signature="e#15#94#0" expanded="true" />
-                <element signature="e#168#254#0" expanded="false" />
+                <element signature="e#15#57#0" expanded="true" />
+                <element signature="n#!!block;n#validate#0" expanded="false" />
                 <element signature="n#!!block;n#String#0" expanded="false" />
-                <element signature="n#!!block;n#Count#0" expanded="false" />
+                <element signature="n#!!block;n#write#0" expanded="false" />
                 <element signature="n#!!block;n#Min#0" expanded="false" />
                 <element signature="n#!!block;n#Max#0" expanded="false" />
                 <element signature="n#!!block;n#Asc#0" expanded="false" />
                 <element signature="n#!!block;n#Desc#0" expanded="false" />
                 <element signature="n#!!block;n#Validate#0" expanded="false" />
+                <element signature="n#!!block;n#find#0" expanded="false" />
+                <element signature="n#!!block;n#min#0" expanded="false" />
+                <element signature="n#!!block;n#max#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tree.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tree/avl/tree.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="525" column="1" selection-start-line="525" selection-start-column="1" selection-end-line="525" selection-end-column="1" />
+              <folding>
+                <element signature="e#123#235#0" expanded="false" />
+                <element signature="n#!!block;n#String#0" expanded="false" />
+                <element signature="n#!!block;n#write#0" expanded="false" />
+                <element signature="n#!!block;n#Insert#0" expanded="false" />
+                <element signature="n#!!block;n#Delete#0" expanded="false" />
+                <element signature="n#!!block;n#Max#0" expanded="false" />
+                <element signature="n#!!block;n#Asc#0" expanded="false" />
+                <element signature="n#!!block;n#Desc#0" expanded="false" />
+                <element signature="n#!!block;n#Validate#0" expanded="false" />
+                <element signature="n#!!block;n#node_height#0" expanded="false" />
+                <element signature="n#!!block;n#find#0" expanded="false" />
+                <element signature="n#!!block;n#delete#0" expanded="false" />
+                <element signature="n#!!block;n#node_right_rotate#0" expanded="false" />
+                <element signature="n#!!block;n#node_left_rotate#0" expanded="false" />
+                <element signature="n#!!block;n#next_node#0" expanded="false" />
+                <element signature="n#!!block;n#min#0" expanded="false" />
+                <element signature="n#!!block;n#max#0" expanded="false" />
+                <element signature="n#!!block;n#Print#0" expanded="false" />
+                <element signature="n#!!block;n#PrintFile#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tree.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tree/splay/tree.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="363" column="0" selection-start-line="350" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+              <folding>
+                <element signature="e#15#94#0" expanded="true" />
+                <element signature="n#!!block;n#validate#0" expanded="false" />
+                <element signature="n#!!block;n#String#0" expanded="false" />
+                <element signature="n#!!block;n#Insert#0" expanded="false" />
+                <element signature="n#!!block;n#Delete#0" expanded="false" />
+                <element signature="n#!!block;n#Find#0" expanded="false" />
+                <element signature="n#!!block;n#Count#0" expanded="false" />
+                <element signature="n#!!block;n#Max#0" expanded="false" />
+                <element signature="n#!!block;n#Asc#0" expanded="false" />
+                <element signature="n#!!block;n#Desc#0" expanded="false" />
                 <element signature="n#!!block;n#splay#0" expanded="false" />
                 <element signature="n#!!block;n#merge#0" expanded="false" />
                 <element signature="n#!!block;n#right_rotate#0" expanded="false" />
@@ -104,32 +155,8 @@
                 <element signature="n#!!block;n#find#0" expanded="false" />
                 <element signature="n#!!block;n#min#0" expanded="false" />
                 <element signature="n#!!block;n#max#0" expanded="false" />
-                <element signature="n#!!block;n#Print#0" expanded="false" />
                 <element signature="n#!!block;n#write#0" expanded="false" />
-                <element signature="n#!!block;n#validate#0" expanded="false" />
                 <element signature="n#!!block;n#PrintFile#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avl_tree.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tree/avl/avl_tree.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="494" column="16" selection-start-line="494" selection-start-column="16" selection-end-line="494" selection-end-column="16" />
-              <folding>
-                <element signature="n#!!block;n#Insert#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -141,7 +168,6 @@
             <state relative-caret-position="615">
               <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
               <folding>
-                <element signature="e#15#36#0" expanded="true" />
                 <element signature="n#!!block;n#Test_Insert_Asc#0" expanded="false" />
                 <element signature="n#!!block;n#Test_Insert_Desc#0" expanded="false" />
                 <element signature="n#!!block;n#Test_Insert_Exists#0" expanded="false" />
@@ -152,13 +178,6 @@
                 <element signature="n#!!block;n#Test_Find_Zag#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tree.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tree/splay/img/tree.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -187,12 +206,15 @@
         <option value="$PROJECT_DIR$/tree/avl_tree.go" />
         <option value="$PROJECT_DIR$/tree/splay_tree.go" />
         <option value="$PROJECT_DIR$/tree/binary/binary_tree.go" />
-        <option value="$PROJECT_DIR$/tree/main.go" />
         <option value="$PROJECT_DIR$/tree/avl/tree_test.go" />
         <option value="$PROJECT_DIR$/tree/splay/splay_tree.go" />
         <option value="$PROJECT_DIR$/main/main.go" />
         <option value="$PROJECT_DIR$/tree/splay/tree_test.go" />
         <option value="$PROJECT_DIR$/tree/avl/avl_tree.go" />
+        <option value="$PROJECT_DIR$/tree/main.go" />
+        <option value="$PROJECT_DIR$/tree/splay/tree.go" />
+        <option value="$PROJECT_DIR$/tree/treap/treap.go" />
+        <option value="$PROJECT_DIR$/tree/avl/tree.go" />
       </list>
     </option>
   </component>
@@ -276,47 +298,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="splay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="splay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avl" />
+              <option name="myItemId" value="treap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,22 +347,13 @@
       <recent name="C:\Workspace\Go\src\test\tree\binary" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.tree_test.go">
+  <component name="RunManager" selected="Go Test.tree_test.go (1)">
     <configuration default="false" name="tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="test" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/tree/splay/tree_test.go" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Test_Delete_lr in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="test" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="test/tree/splay" />
-      <pattern value="^Test_Delete_lr$" />
       <method />
     </configuration>
     <configuration default="false" name="Test_Delete_root in tree_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
@@ -408,6 +381,14 @@
       <kind value="PACKAGE" />
       <package value="test/tree/splay" />
       <pattern value="^Test_Find_Zig$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tree_test.go (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="test" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/tree/avl/tree_test.go" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -658,18 +639,18 @@
       <item index="1" class="java.lang.String" itemvalue="Go Test.TestInsert" />
       <item index="2" class="java.lang.String" itemvalue="Go Application.Main" />
       <item index="3" class="java.lang.String" itemvalue="Go Test.tree_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.Test_Delete_lr in tree_test.go" />
-      <item index="5" class="java.lang.String" itemvalue="Go Test.Test_Delete_root in tree_test.go" />
-      <item index="6" class="java.lang.String" itemvalue="Go Test.Test_Delete_NotExist in tree_test.go" />
-      <item index="7" class="java.lang.String" itemvalue="Go Test.Test_Find_Zig in tree_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.Test_Delete_root in tree_test.go" />
+      <item index="5" class="java.lang.String" itemvalue="Go Test.Test_Delete_NotExist in tree_test.go" />
+      <item index="6" class="java.lang.String" itemvalue="Go Test.Test_Find_Zig in tree_test.go" />
+      <item index="7" class="java.lang.String" itemvalue="Go Test.tree_test.go (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.tree_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.Test_Find_Zig in tree_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.Test_Delete_NotExist in tree_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.Test_Delete_root in tree_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.Test_Delete_lr in tree_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.tree_test.go (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.tree_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.Test_Find_Zig in tree_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.Test_Delete_NotExist in tree_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.Test_Delete_root in tree_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -715,12 +696,6 @@
     <history-entry file="Test_Delete_NotExist_in_tree_test_go - 2016.07.20 at 15h 16m 51s.xml">
       <configuration name="Test_Delete_NotExist in tree_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Delete_lr_in_tree_test_go - 2016.07.20 at 15h 13m 04s.xml">
-      <configuration name="Test_Delete_lr in tree_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="Test_Delete_lr_in_tree_test_go - 2016.07.20 at 15h 13m 50s.xml">
-      <configuration name="Test_Delete_lr in tree_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="Test_Delete_root_in_tree_test_go - 2016.07.20 at 15h 14m 21s.xml">
       <configuration name="Test_Delete_root in tree_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -741,6 +716,12 @@
     </history-entry>
     <history-entry file="tree_test_go - 2016.07.20 at 15h 27m 01s.xml">
       <configuration name="tree_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="tree_test_go - 2016.07.20 at 16h 07m 43s.xml">
+      <configuration name="tree_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="tree_test_go_(1) - 2016.07.20 at 16h 08m 14s.xml">
+      <configuration name="tree_test.go (1)" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -797,7 +778,7 @@
           <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="97" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -806,26 +787,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/5-1(2)-splay.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/1-5(2)-splay.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/1-5(3)-splay.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/1-5(4)-splay.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/1-5(0)-insert.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1036,6 +997,11 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tree/splay/img/tree.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -1044,9 +1010,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tree/splay/img/tree.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/tree/avl/tree_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tree/splay/tree_test.go">
@@ -1054,7 +1023,6 @@
         <state relative-caret-position="615">
           <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
           <folding>
-            <element signature="e#15#36#0" expanded="true" />
             <element signature="n#!!block;n#Test_Insert_Asc#0" expanded="false" />
             <element signature="n#!!block;n#Test_Insert_Desc#0" expanded="false" />
             <element signature="n#!!block;n#Test_Insert_Exists#0" expanded="false" />
@@ -1067,20 +1035,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tree/splay/splay_tree.go">
+    <entry file="file://$PROJECT_DIR$/tree/splay/tree.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1370">
-          <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
+        <state relative-caret-position="545">
+          <caret line="363" column="0" selection-start-line="350" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
           <folding>
             <element signature="e#15#94#0" expanded="true" />
-            <element signature="e#168#254#0" expanded="false" />
+            <element signature="n#!!block;n#validate#0" expanded="false" />
             <element signature="n#!!block;n#String#0" expanded="false" />
+            <element signature="n#!!block;n#Insert#0" expanded="false" />
+            <element signature="n#!!block;n#Delete#0" expanded="false" />
+            <element signature="n#!!block;n#Find#0" expanded="false" />
             <element signature="n#!!block;n#Count#0" expanded="false" />
-            <element signature="n#!!block;n#Min#0" expanded="false" />
             <element signature="n#!!block;n#Max#0" expanded="false" />
             <element signature="n#!!block;n#Asc#0" expanded="false" />
             <element signature="n#!!block;n#Desc#0" expanded="false" />
-            <element signature="n#!!block;n#Validate#0" expanded="false" />
             <element signature="n#!!block;n#splay#0" expanded="false" />
             <element signature="n#!!block;n#merge#0" expanded="false" />
             <element signature="n#!!block;n#right_rotate#0" expanded="false" />
@@ -1088,20 +1057,70 @@
             <element signature="n#!!block;n#find#0" expanded="false" />
             <element signature="n#!!block;n#min#0" expanded="false" />
             <element signature="n#!!block;n#max#0" expanded="false" />
-            <element signature="n#!!block;n#Print#0" expanded="false" />
             <element signature="n#!!block;n#write#0" expanded="false" />
-            <element signature="n#!!block;n#validate#0" expanded="false" />
             <element signature="n#!!block;n#PrintFile#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tree/avl/avl_tree.go">
+    <entry file="file://$PROJECT_DIR$/tree/treap/treap.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="494" column="16" selection-start-line="494" selection-start-column="16" selection-end-line="494" selection-end-column="16" />
+        <state relative-caret-position="344">
+          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
           <folding>
+            <element signature="e#15#57#0" expanded="true" />
+            <element signature="n#!!block;n#validate#0" expanded="false" />
+            <element signature="n#!!block;n#String#0" expanded="false" />
+            <element signature="n#!!block;n#write#0" expanded="false" />
+            <element signature="n#!!block;n#Min#0" expanded="false" />
+            <element signature="n#!!block;n#Max#0" expanded="false" />
+            <element signature="n#!!block;n#Asc#0" expanded="false" />
+            <element signature="n#!!block;n#Desc#0" expanded="false" />
+            <element signature="n#!!block;n#Validate#0" expanded="false" />
+            <element signature="n#!!block;n#find#0" expanded="false" />
+            <element signature="n#!!block;n#min#0" expanded="false" />
+            <element signature="n#!!block;n#max#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/avl/img/insert(exists).jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree/avl/tree.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="525" column="1" selection-start-line="525" selection-start-column="1" selection-end-line="525" selection-end-column="1" />
+          <folding>
+            <element signature="e#123#235#0" expanded="false" />
+            <element signature="n#!!block;n#String#0" expanded="false" />
+            <element signature="n#!!block;n#write#0" expanded="false" />
             <element signature="n#!!block;n#Insert#0" expanded="false" />
+            <element signature="n#!!block;n#Delete#0" expanded="false" />
+            <element signature="n#!!block;n#Max#0" expanded="false" />
+            <element signature="n#!!block;n#Asc#0" expanded="false" />
+            <element signature="n#!!block;n#Desc#0" expanded="false" />
+            <element signature="n#!!block;n#Validate#0" expanded="false" />
+            <element signature="n#!!block;n#node_height#0" expanded="false" />
+            <element signature="n#!!block;n#find#0" expanded="false" />
+            <element signature="n#!!block;n#delete#0" expanded="false" />
+            <element signature="n#!!block;n#node_right_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#node_left_rotate#0" expanded="false" />
+            <element signature="n#!!block;n#next_node#0" expanded="false" />
+            <element signature="n#!!block;n#min#0" expanded="false" />
+            <element signature="n#!!block;n#max#0" expanded="false" />
+            <element signature="n#!!block;n#Print#0" expanded="false" />
+            <element signature="n#!!block;n#PrintFile#0" expanded="false" />
           </folding>
         </state>
       </provider>
